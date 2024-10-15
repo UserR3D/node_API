@@ -10,3 +10,5 @@ app.get('/', (_req: Request, res: Response) => {
 app.listen(3333, () => {
   console.log('test');
 });
+
+export default app;
