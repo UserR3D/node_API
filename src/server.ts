@@ -1,14 +1,14 @@
-import express from 'express';
+import { Router } from 'express';
 import { Request, Response } from 'express';
 
-const app = express();
+const router = Router();
 
-app.get('/', (_req: Request, res: Response) => {
+router.get('/', (_req: Request, res: Response) => {
   res.send('Hello World');
 });
 
-app.listen(3333, () => {
-  console.log('test');
+router.post('/post', (req: Request, res: Response) => {
+  res.send(req.body);
 });
 
-export default app;
+export default router;
