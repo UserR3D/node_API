@@ -1,14 +1,11 @@
 import { Router } from 'express';
-import { Request, Response } from 'express';
+import getApi from './controllers/getApi';
+import postApi from './controllers/postApi';
 
 const router = Router();
 
-router.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World');
-});
+router.get('/', getApi);
 
-router.post('/post', (req: Request, res: Response) => {
-  res.send(req.body);
-});
+router.post('/post', postApi);
 
 export default router;
