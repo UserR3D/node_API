@@ -1,7 +1,13 @@
 import { Request, Response } from 'express';
-
-const getApi = (_req: Request, res: Response) => {
-  res.send('Hello World');
+import { DbgetAll } from '../services/db.service';
+const getApi = async (_req: Request, res: Response) => {
+  try {
+    res.send(await DbgetAll());
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error('Error:', err);
+    }
+  }
 };
 
 export default getApi;

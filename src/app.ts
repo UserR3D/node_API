@@ -8,5 +8,5 @@ app.use(express.json());
 app.use(router);
 
 app.listen(process.env.PORT, () => {
-  console.log('test');
+  console.log('Server Starting');
 });
