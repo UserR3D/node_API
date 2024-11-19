@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import getApi from './controllers/getApi';
-import postApi from './controllers/postApi';
+import getApi from '../controllers/getApi';
+import postApi from '../controllers/postApi';
 
 const router = Router();
 
