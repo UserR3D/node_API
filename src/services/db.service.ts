@@ -13,4 +13,9 @@ async function Dbcreate(task: Api) {
   return result;
 }
 
-export { Dbcreate, DbgetAll };
+async function DbDelete(params: number) {
+  const result = await query('DELETE FROM showBoard where Id = ?', [params]);
+  return result;
+}
+
+export { Dbcreate, DbgetAll, DbDelete };
