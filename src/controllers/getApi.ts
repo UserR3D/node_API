@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
-import { DbgetAll } from '../services/db.service';
-const getApi = async (_req: Request, res: Response) => {
+import { Dbget } from '../services/db.service';
+
+const getApi = async (req: Request, res: Response) => {
   try {
-    res.send(await DbgetAll());
+    res.send(await Dbget(req.params.id));
   } catch (err) {
     if (err instanceof Error) {
-      console.error('Error:', err);
+      res.json({ Error: true, Message: 'Error execute sql' });
     }
   }
 };

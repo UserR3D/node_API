@@ -5,6 +5,11 @@ async function DbgetAll() {
   return result;
 }
 
+async function Dbget(params: number) {
+  const result = await query('SELECT* FROM `showBoard` WHERE id= ?', [params]);
+  return result;
+}
+
 async function Dbcreate(task: Api) {
   const result = await query(
     'INSERT INTO showBoard(Task, Results) VALUES (?, ?)',
@@ -18,4 +23,4 @@ async function DbDelete(params: number) {
   return result;
 }
 
-export { Dbcreate, DbgetAll, DbDelete };
+export { Dbcreate, Dbget, DbgetAll, DbDelete };
