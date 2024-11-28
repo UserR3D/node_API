@@ -22,5 +22,12 @@ async function DbDelete(params: number) {
   const result = await query('DELETE FROM showBoard where Id = ?', [params]);
   return result;
 }
+async function DbUpdate(response: string, id: number) {
+  const result = await query('UPDATE showBoard set Results = ? WHERE id = ?', [
+    response,
+    id,
+  ]);
+  return result;
+}
 
-export { Dbcreate, Dbget, DbgetAll, DbDelete };
+export { Dbcreate, Dbget, DbgetAll, DbDelete, DbUpdate };
