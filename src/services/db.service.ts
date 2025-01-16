@@ -19,7 +19,7 @@ async function DbDelete(params: number) {
   const result = await query('DELETE FROM showBoard where Id = ?', [params]);
   return result;
 }
-async function DbUpdate(task: string, response: string, id: number) {
+async function DbUpdate(id: number, task?: string, response?: string) {
   const result = await query('UPDATE showBoard set Task = ?, Results = ? WHERE id = ?', [task, response, id]);
   return result;
 }
