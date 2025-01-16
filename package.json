@@ -20,12 +20,14 @@
   "homepage": "https://github.com/UserR3D/node_API#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mysql2": "^3.11.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.8.2",
     "eslint": "^9.12.0",

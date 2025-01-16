@@ -5,8 +5,7 @@ const postApi = async (req: Request, res: Response) => {
   try {
     res.json(await Dbcreate(req.body as Api));
   } catch (err) {
-    if (err instanceof Error)
-      console.error('Error while creating tasks', err.message);
+    if (err instanceof Error) console.error('Error while creating tasks', err.message);
   }
 };
 

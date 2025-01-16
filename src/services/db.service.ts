@@ -11,10 +11,7 @@ async function Dbget(params: number) {
 }
 
 async function Dbcreate(task: Api) {
-  const result = await query(
-    'INSERT INTO showBoard(Task, Results) VALUES (?, ?)',
-    [task.Task, task.Results]
-  );
+  const result = await query('INSERT INTO showBoard(Task, Results) VALUES (?, ?)', [task.Task, task.Results]);
   return result;
 }
 
@@ -22,11 +19,8 @@ async function DbDelete(params: number) {
   const result = await query('DELETE FROM showBoard where Id = ?', [params]);
   return result;
 }
-async function DbUpdate(response: string, id: number) {
-  const result = await query('UPDATE showBoard set Results = ? WHERE id = ?', [
-    response,
-    id,
-  ]);
+async function DbUpdate(task: string, response: string, id: number) {
+  const result = await query('UPDATE showBoard set Task = ?, Results = ? WHERE id = ?', [task, response, id]);
   return result;
 }
 

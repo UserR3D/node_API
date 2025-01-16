@@ -5,7 +5,6 @@ import 'dotenv/config';
 async function query(sql: string, params?: unknown) {
   const connection = await mysql.createConnection(db);
   const [results] = await connection.execute(sql, params);
-
   return results;
 }
 
